@@ -1,0 +1,67 @@
+===============================================================================
+ V1S 0.0.4 -- Basic V1-Like (simple cells) Object Recognition System
+-------------------------------------------------------------------------------
+Nicolas Pinto (pinto@mit.edu)
+David Cox (davidcox@mit.edu)
+James DiCarlo (dicarlo@mit.edu)
+-------------------------------------------------------------------------------
+This code has been used in the following research articles:
+
+Why is Real-World Visual Object Recognition Hard? (2008)
+Pinto N, Cox DD, DiCarlo JJ 
+PLoS Computational Biology Vol. 4, No. 1, e27 doi:10.1371/journal.pcbi.0040027  
+
+Establishing Good Benchmarks and Baselines for Face Recognition (2008)
+Pinto N, Dicarlo JJ, Cox DD
+ECCV 2008 Faces in 'Real-Life' Images Workshop. 
+-------------------------------------------------------------------------------
+Copyright 2008 - DiCarlo Lab at MIT and MIT All rights reserved.
+
+Permission to copy and modify this data, software, and its documentation only 
+for internal research use in your organization is hereby granted, provided that
+this notice is retained thereon and on all copies. 
+
+This data and software should not be distributed to anyone outside of your 
+organization without explicit written authorization by the authors and MIT. It 
+should not be used for commercial purposes without specific permission from the 
+authors and MIT. MIT also requires written authorization by the authors to 
+publish results obtained with the data or software and possibly citation of 
+relevant reference papers.
+
+We make no representation as to the suitability and operability of this data 
+or software for any purpose. It is provided "as is" without express or implied 
+warranty. 
+===============================================================================
+
+This set of python scripts have successfuly been tested under GNU/Linux and 
+Mac OS X. 
+
+You will need the following open source python libaries:
+- numpy (tested with version 1.0.1) 
+- scipy (tested with version 0.5.2)
+- PyML (tested with version 0.6.11 and 0.7.0)
+- Python Imaging Library (tested with version 1.1.5)
+
+-------------------------------------------------------------------------------
+Example of use:
+
+# Download Caltech 101 Dataset
+wget http://www.vision.caltech.edu/Image_Datasets/Caltech101/\
+101_ObjectCategories.tar.gz
+
+# Extract archive content
+tar xzvf 101_ObjectCategories.tar.gz -C /tmp
+
+# Assess the performance of a simple V1-like model
+python ./v1s_run.py params_simple.py /tmp/101_ObjectCategories      
+
+# Assess the performance of a simple V1-like model + cheap tricks
+python ./v1s_run.py params_simple_plus.py /tmp/101_ObjectCategories 
+
+-------------------------------------------------------------------------------
+Known Issue:
+
+Note that you may need a lot of memory to run the program. A MemoryError 
+exception will be raised if your operating system can't allocate enough memory
+(remember that one process cannot address more than 4GB on a 32bit system).
+-------------------------------------------------------------------------------
